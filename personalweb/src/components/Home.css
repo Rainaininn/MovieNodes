@@ -1,0 +1,41 @@
+.image {
+  background: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 110vh;
+  margin: 0;
+}
+
+.horizontal{
+  display: flex;
+}
+
+.leftHori{
+  width: 40%;
+  font-size: 20pt;
+  margin-top: 20vh;
+  margin-left: 180px;
+  /* float: left; */
+}
+
+.rightHori{
+  margin-top: 5vh;
+  padding-right: 50px;
+  padding-top: 50px;
+  width: 400pt;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  color: white;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+  .leftHori, .rightHori {width: 100%;}
+  .horizontal{display: inline;}
+  .leftHori {margin-top: 0px; padding-top: 100px; text-align: center ;margin-left: auto; margin-right: auto;}
+  .rightHori {margin-top: 0px; padding: 0px; padding-left: 25px; max-width: 90vw; }
+  .image{
+    height: 120%;
+  }
+}
