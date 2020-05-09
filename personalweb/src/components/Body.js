@@ -3,6 +3,7 @@ import Home from './Home';
 import Images from './Images';
 import Videos from './Videos';
 import Projects from './Projects';
+import Contact from './Contact';
 // import { render } from "react-dom";
 
 export class Body extends Component{
@@ -18,8 +19,12 @@ export class Body extends Component{
       return <Videos></Videos>
       // return render(<Videos />, document.getElementById("root"));
     }
-    else{
+    else if(activeTab == 4){
       return <Projects></Projects>
+      // return render(<Videos />, document.getElementById("root"));
+    }
+    else{
+      return <Contact></Contact>
     }
   }
   render(){
