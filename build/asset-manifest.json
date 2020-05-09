@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/PersonalWebReact/static/css/main.26f13180.chunk.css",
+    "main.js": "/PersonalWebReact/static/js/main.7f66c1be.chunk.js",
+    "main.js.map": "/PersonalWebReact/static/js/main.7f66c1be.chunk.js.map",
+    "runtime-main.js": "/PersonalWebReact/static/js/runtime-main.e5adb6e1.js",
+    "runtime-main.js.map": "/PersonalWebReact/static/js/runtime-main.e5adb6e1.js.map",
+    "static/css/2.9522b9fe.chunk.css": "/PersonalWebReact/static/css/2.9522b9fe.chunk.css",
+    "static/js/2.f12a097f.chunk.js": "/PersonalWebReact/static/js/2.f12a097f.chunk.js",
+    "static/js/2.f12a097f.chunk.js.map": "/PersonalWebReact/static/js/2.f12a097f.chunk.js.map",
+    "index.html": "/PersonalWebReact/index.html",
+    "precache-manifest.fb059f4b1613a3983bcd7309f0d56e97.js": "/PersonalWebReact/precache-manifest.fb059f4b1613a3983bcd7309f0d56e97.js",
+    "service-worker.js": "/PersonalWebReact/service-worker.js",
+    "static/css/2.9522b9fe.chunk.css.map": "/PersonalWebReact/static/css/2.9522b9fe.chunk.css.map",
+    "static/css/main.26f13180.chunk.css.map": "/PersonalWebReact/static/css/main.26f13180.chunk.css.map",
+    "static/js/2.f12a097f.chunk.js.LICENSE.txt": "/PersonalWebReact/static/js/2.f12a097f.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/PersonalWebReact/static/media/background.0d7d3125.jpg",
+    "static/media/Contact.css": "/PersonalWebReact/static/media/contact_back.845bab77.png",
+    "static/media/crab.mov": "/PersonalWebReact/static/media/crab.7e1229eb.mov",
+    "static/media/fullbamboo.png": "/PersonalWebReact/static/media/fullbamboo.62136f62.png",
+    "static/media/gallery1.jpg": "/PersonalWebReact/static/media/gallery1.08e8ced9.jpg",
+    "static/media/gallery2.jpg": "/PersonalWebReact/static/media/gallery2.c1d12fa6.jpg",
+    "static/media/gallery3.jpg": "/PersonalWebReact/static/media/gallery3.7b3199e0.jpg",
+    "static/media/gallery4.jpg": "/PersonalWebReact/static/media/gallery4.06ff5381.jpg",
+    "static/media/gallery5.jpg": "/PersonalWebReact/static/media/gallery5.156490b2.jpg",
+    "static/media/gallery6.jpg": "/PersonalWebReact/static/media/gallery6.d237120a.jpg",
+    "static/media/gallery7.jpg": "/PersonalWebReact/static/media/gallery7.480a9dbb.jpg",
+    "static/media/gallery8.jpg": "/PersonalWebReact/static/media/gallery8.f8396359.jpg",
+    "static/media/gallery9.jpg": "/PersonalWebReact/static/media/gallery9.c2d7ec25.jpg",
+    "static/media/mojave.mp4": "/PersonalWebReact/static/media/mojave.7771f228.mp4",
+    "static/media/pancake.mov": "/PersonalWebReact/static/media/pancake.3ac68034.mov",
+    "static/media/profile.jpg": "/PersonalWebReact/static/media/profile.3b3b6c36.jpg",
+    "static/media/project1.png": "/PersonalWebReact/static/media/project1.84a57ee3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5adb6e1.js",
+    "static/css/2.9522b9fe.chunk.css",
+    "static/js/2.f12a097f.chunk.js",
+    "static/css/main.26f13180.chunk.css",
+    "static/js/main.7f66c1be.chunk.js"
+  ]
+}
