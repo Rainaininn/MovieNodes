@@ -3,6 +3,8 @@ import './App.css'
 import TabList from './components/TabList';
 import Body from './components/Body';
 import BackToTop from './components/BackToTop'
+// import config from './config.js'
+// const firebase = require('firebase')
 
 export class App extends Component{
   constructor(){
@@ -11,7 +13,7 @@ export class App extends Component{
       activeTab: 1
     }
     this.changeTab = (id) =>{
-      if(id != 5){
+      if(id != 6){
         this.setState({
         activeTab: id
       })
@@ -21,7 +23,7 @@ export class App extends Component{
   }
   handleOverScroll(){
     var bttn=document.querySelector(".top");
-    if(document.body.scrollTop>20|| document.documentElement.scrollTop>20){
+    if(document.body.scrollTop>100 || document.documentElement.scrollTop>100 ){
         bttn.style.visibility="visible";
     }
     else{
@@ -30,7 +32,34 @@ export class App extends Component{
   }
   componentDidMount(){
     window.addEventListener('scroll',this.handleOverScroll)
+    // if (!firebase.apps.length){
+    //   firebase.initializeApp(config)
+    // } 
+    // //get a reference to the database
+    // let ref = firebase.database().ref('data')
+
+    // //retrieve its data
+    // ref.on('value', snapshot => {
+    //     //this is your call back function
+    //     //state will be a JSON object after this
+    //     //set your apps state to contain this data however you like
+    //     const state = snapshot.val()
+    //     //since i use react 16, i set my state like this
+    //     //i have previously declared a state variable like this: const [data, setData] = useState([]) so that I can make the below call
+    //     setData(state)
+    //     const data = snapshot.val()
+    //     this.setState({data: data})
+    // })
+
   }
+  // componentDidUpdate(prevProps, prevState, snapshot){
+  //   //only call set state here if it is wrapped in a condition
+  //   //if you initialize this.state.shouldUpdate and have not changed it yet then this will not run
+  //   if(this.state.shouldUpdate != prevState.shouldUpdate){
+  //     //same code as above to retrieve the data 
+  //   }
+  // }
+
   render(){
     const tabs = [
       {
@@ -48,6 +77,10 @@ export class App extends Component{
       {
         id: 4,
         title: "Projects"
+      },
+      {
+        id: 5,
+        title: "Contact"
       },
     ]
     return(
