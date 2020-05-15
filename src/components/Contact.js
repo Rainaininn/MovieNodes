@@ -5,11 +5,8 @@ import Form from './Form'
 const firebase = require('firebase')
 
 function Contact(props){
-  // var messages = []
   const [messages, setMessage] = useState([]);
-  // const [state, setData] = useState([])
   const [shouldRender, setShouldRender] = useState(true)
-  // const sample = ["hi", "how are you"]
 
   useEffect(() => {
     if (!firebase.apps.length) {
@@ -22,9 +19,6 @@ function Contact(props){
       //state will be a JSON object after this
       //set your apps state to contain this data however you like
       const m2 = snapshot.val()
-      //since i use react 16, i set my state like this
-      //i have previously declared a state variable like this: const [data, setData] = useState([]) so that I can make the below call
-      // setData(state)
       let newState = [];
       for(let m1 in m2){
         newState.push({
@@ -36,13 +30,14 @@ function Contact(props){
           time: m2[m1].time,
         });
       }
+      // console.log("newState: ",newState);
       setMessage(newState);
       // console.log("Inside display2: ", newState);
     })
   }, [shouldRender])
 
   function displayMessage() {
-    // console.log("Inside display1: ", messages);
+    console.log("Inside display1: ", messages);
     const content = messages.map((post, index) => {
     if(post.pubview === "public"){
       return <div key={index} className="post">

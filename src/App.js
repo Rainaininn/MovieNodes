@@ -13,7 +13,7 @@ export class App extends Component{
       activeTab: 1
     }
     this.changeTab = (id) =>{
-      if(id != 6){
+      if(id != 7){
         this.setState({
         activeTab: id
       })
@@ -80,6 +80,10 @@ export class App extends Component{
       },
       {
         id: 5,
+        title: "Movies"
+      },
+      {
+        id: 6,
         title: "Contact"
       },
     ]
