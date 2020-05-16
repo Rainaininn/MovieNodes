@@ -31,6 +31,7 @@ export class App extends Component{
     }
   }
   componentDidMount(){
+    document.title = "Rain Wang"
     window.addEventListener('scroll',this.handleOverScroll)
     // if (!firebase.apps.length){
     //   firebase.initializeApp(config)
