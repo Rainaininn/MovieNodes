@@ -40,7 +40,7 @@ function Movies(props){
   useEffect(() => {
     const listofpromises = [];
     for (const [index,value] of movieIds.entries()) {
-      const url = 'http://www.omdbapi.com/?apikey='+apikey+'&i='+value;
+      const url = 'https://www.omdbapi.com/?apikey='+apikey+'&i='+value;
       listofpromises.push(axios.get(url));
     }
     axios.all(listofpromises)
