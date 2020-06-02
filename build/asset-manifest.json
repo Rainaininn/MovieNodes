@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/PersonalWebReact/static/css/main.39642025.chunk.css",
-    "main.js": "/PersonalWebReact/static/js/main.331fbf42.chunk.js",
-    "main.js.map": "/PersonalWebReact/static/js/main.331fbf42.chunk.js.map",
+    "main.css": "/PersonalWebReact/static/css/main.4bf7c171.chunk.css",
+    "main.js": "/PersonalWebReact/static/js/main.987fa9cb.chunk.js",
+    "main.js.map": "/PersonalWebReact/static/js/main.987fa9cb.chunk.js.map",
     "runtime-main.js": "/PersonalWebReact/static/js/runtime-main.e5adb6e1.js",
     "runtime-main.js.map": "/PersonalWebReact/static/js/runtime-main.e5adb6e1.js.map",
     "static/css/2.9522b9fe.chunk.css": "/PersonalWebReact/static/css/2.9522b9fe.chunk.css",
-    "static/js/2.56cf99d2.chunk.js": "/PersonalWebReact/static/js/2.56cf99d2.chunk.js",
-    "static/js/2.56cf99d2.chunk.js.map": "/PersonalWebReact/static/js/2.56cf99d2.chunk.js.map",
+    "static/js/2.5804eafe.chunk.js": "/PersonalWebReact/static/js/2.5804eafe.chunk.js",
+    "static/js/2.5804eafe.chunk.js.map": "/PersonalWebReact/static/js/2.5804eafe.chunk.js.map",
     "index.html": "/PersonalWebReact/index.html",
-    "precache-manifest.90125190db105c23bb6396c9c9f9ca12.js": "/PersonalWebReact/precache-manifest.90125190db105c23bb6396c9c9f9ca12.js",
+    "precache-manifest.35fda6177d3e3ba4dae425a471d6758e.js": "/PersonalWebReact/precache-manifest.35fda6177d3e3ba4dae425a471d6758e.js",
     "service-worker.js": "/PersonalWebReact/service-worker.js",
     "static/css/2.9522b9fe.chunk.css.map": "/PersonalWebReact/static/css/2.9522b9fe.chunk.css.map",
-    "static/css/main.39642025.chunk.css.map": "/PersonalWebReact/static/css/main.39642025.chunk.css.map",
-    "static/js/2.56cf99d2.chunk.js.LICENSE.txt": "/PersonalWebReact/static/js/2.56cf99d2.chunk.js.LICENSE.txt",
+    "static/css/main.4bf7c171.chunk.css.map": "/PersonalWebReact/static/css/main.4bf7c171.chunk.css.map",
+    "static/js/2.5804eafe.chunk.js.LICENSE.txt": "/PersonalWebReact/static/js/2.5804eafe.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/PersonalWebReact/static/media/background.0d7d3125.jpg",
     "static/media/Contact.css": "/PersonalWebReact/static/media/contact_back.845bab77.png",
     "static/media/crab.mov": "/PersonalWebReact/static/media/crab.7e1229eb.mov",
@@ -36,8 +36,8 @@
   "entrypoints": [
     "static/js/runtime-main.e5adb6e1.js",
     "static/css/2.9522b9fe.chunk.css",
-    "static/js/2.56cf99d2.chunk.js",
-    "static/css/main.39642025.chunk.css",
-    "static/js/main.331fbf42.chunk.js"
+    "static/js/2.5804eafe.chunk.js",
+    "static/css/main.4bf7c171.chunk.css",
+    "static/js/main.987fa9cb.chunk.js"
   ]
 }
