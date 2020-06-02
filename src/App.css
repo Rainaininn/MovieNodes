@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.main-body{
+  height: max(100vh, 100%);
+}
+
 .nav-bar{
   display: flex;
   position: fixed;
