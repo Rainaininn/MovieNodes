@@ -100,24 +100,6 @@ class Form extends React.Component {
       event.preventDefault();
     }
     else{
-      //'data' here is a field in my database that stores all my messages
-      //push() adds a child
-      //set(jsonBody) sets the value of that child to jsonBody, which is valid JSON
-      // let tempForm = {
-      //   id: 0,
-      //   name: this.state.name,
-      //   description: this.state.descriptio,
-      //   message: this.state.message,
-      //   pubview: this.state.pubview,
-      //   email: this.state.email,
-      //   time: new Date().toLocaleString(),
-      // }
-      // let jsonBody = JSON.stringify(tempForm);
-      // console.log(jsonBody);
-      // console.log(tempForm);
-
-      // firebase.database().ref('data').push().set(jsonBody);
-      // alert('Your message has been successfully submitted.');
       firebase.database().ref("data2").push(
         {
           name: this.state.name,
