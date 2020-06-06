@@ -57,6 +57,7 @@ class NewMovieForm extends React.Component{
                   Plot: response.data.Plot,
                   Awards: response.data.Awards,
                   Runtime: response.data.Runtime,
+                  Actors: response.data.Actors,
                   List: '',
                 }
               );
