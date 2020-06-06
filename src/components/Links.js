@@ -5,37 +5,6 @@ import { svg } from 'd3';
 const firebase = require('firebase')
 var d3 = require('d3');
 
-// const data = {
-//   nodes: [
-//     {
-//       name: "Inception",
-//       group: 1,
-//     },
-//     {
-//       name: "Coco",
-//       group: 2,
-//     },
-//     {
-//       name: "La La Land",
-//       group: 2,
-//     },
-//   ],
-//   links: [
-//     {
-//       source: 1,
-//       target: 0,
-//     },
-//     {
-//       source: 2,
-//       target: 0,
-//     },
-//     {
-//       source: 1,
-//       target: 2,
-//     },
-//   ]
-// }
-
 export class Link extends Component{
   constructor(){
     super();
