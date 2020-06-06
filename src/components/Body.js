@@ -4,6 +4,7 @@ import Images from './Images';
 import Videos from './Videos';
 import Projects from './Projects';
 import Movies from './Movies';
+import Link from './Links'
 import Contact from './Contact';
 // import { render } from "react-dom";
 
@@ -25,6 +26,9 @@ export class Body extends Component{
     }
     else if(activeTab == 5){
       return <Movies></Movies>
+    }
+    else if(activeTab == 6){
+      return <Link></Link>
     }
     else{
       return <Contact></Contact>
