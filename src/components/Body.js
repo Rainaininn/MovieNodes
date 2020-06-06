@@ -5,7 +5,6 @@ import Videos from './Videos';
 import Projects from './Projects';
 import Movies from './Movies';
 import Contact from './Contact';
-import Links from './Links';
 // import { render } from "react-dom";
 
 export class Body extends Component{
@@ -26,9 +25,6 @@ export class Body extends Component{
     }
     else if(activeTab == 5){
       return <Movies></Movies>
-    }
-    else if(activeTab == 6){
-      return <Links></Links>
     }
     else{
       return <Contact></Contact>
