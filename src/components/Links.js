@@ -181,9 +181,14 @@ export class Link extends Component{
 
   render(){
     return(
-      <div id="mysvg">
-
+      <div>
+        <div id="mysvg">
+        </div>
+        <div className="descrip-graph">
+          You can edit this graph by arranging the GraphViz list in Movies tab.
+        </div>
       </div>
+      
     );
   }
 

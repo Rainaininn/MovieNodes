@@ -10,19 +10,17 @@ const apikey = '98ff92ae';
 
 function Movies(props){
 
-  const movieIds = ["tt1375666","tt0190332","tt0468569","tt0499549","tt3783958","tt0107156","tt5580390","tt2948356","tt1024648","tt2380307","tt0944835","tt0093389"];
+  // const movieIds = ["tt1375666","tt0190332","tt0468569","tt0499549","tt3783958","tt0107156","tt5580390","tt2948356","tt1024648","tt2380307","tt0944835","tt0093389"];
   const [currMovieList, setCurrMovieList] = useState([]);
   const [availMovieLists, setAvailMovieLists] = useState([]);
   const [availMLAll, setAvailMLAll] = useState([]);
   const [chosenML, setChosenML] = useState('All');
   const [searchName, setSearchName] = useState('');
-  const [showUntil, setShowUntil] = useState(0);
   const [totalNum, setTotalNum] = useState(0);
   const [movies, setMovies] = useState([]);
   const [shouldRender, setShouldRender] = useState(true);
   const [open, setOpen] = useState(false);
   const [slide, setSlide] = useState(0);
-  const [showLoadMore, setShowLoadMore] = useState(false);
   const [beginning, setBeginning] = useState(false);
 
   function disableScrolling(){
@@ -36,47 +34,20 @@ function Movies(props){
   }
 
   useEffect(() => {
-    let tempShowUntil;
-    if(beginning=== false){
-      tempShowUntil = 8;
-      setShowUntil(8);
-    }
-    else{
-      tempShowUntil = showUntil;
-      setShowUntil(tempShowUntil);
-    }
     // get all the movies in data3
     console.log("Calling UseEffect Again!!");
     firebase.database().ref("data3").on("value", snapshot => {
       const lists = snapshot.val();
-      let newState = [];
       let newStateAll = [];
       let count = 0;
       for (let list in lists) {
-        if(count < tempShowUntil){
-          newState.push(lists[list]);
-        }
         newStateAll.push(lists[list]);
         count = count + 1;
       }
-      console.log("show until 1:", tempShowUntil);
-      if(beginning === false){
-        setTotalNum(count);
-        setBeginning(beginning => true);
-      }
-      setMovies(newState);
+      setTotalNum(count);
+      setMovies(newStateAll);
       if(chosenML === "All" && searchName === ""){
-        setCurrMovieList(newState);
-        if(tempShowUntil < count){
-          ////
-          console.log("show until:", tempShowUntil);
-          console.log("count: ", count)
-          console.log("Turned to true here 3");
-          setShowLoadMore(showLoadMore => true);
-        }
-        else{
-          setShowLoadMore(showLoadMore => false);
-        }
+        setCurrMovieList(newStateAll);
       }
       else{
         let count3 = 0;
@@ -85,18 +56,8 @@ function Movies(props){
             count3 = count3 + 1;
           }
         }
-        console.log("Finallyyyyyyyyyyyyyyyy", tempShowUntil)
-        console.log("Finallyyyyyyyyyyyyy 2", count3)
-        if(tempShowUntil < count3){
-          setShowLoadMore(showLoadMore => true);
-        }
-        else if(tempShowUntil >= count3){
-          setShowLoadMore(showLoadMore => false);
-        }
       }
     });
-
-    
 
     //get all available movie lists
     firebase.database().ref("data4").on("value", snapshot => {
@@ -117,15 +78,12 @@ function Movies(props){
     setOpen(open => true);
     setSlide(slide => index);
     disableScrolling();
-    // document.body.classList.add("disable-scrolling"); 
-    // index = index;
     console.log("open ? ",open);
     console.log("Clicked on this movie: ", currMovieList[index]);
   }
 
   function showModal(){
     var currMovie = currMovieList[slide];
-    // console.log("background grid: ", currMovieList);
     if(open === true){
       return(
         <Popup
@@ -181,56 +139,30 @@ function Movies(props){
   }
 
   function updateCurrML(lst){
-    console.log("Show until: " , showUntil)
-
-    console.log("lst is ", lst);
     setChosenML(lst);
-    let newState = [];
     let newStateFull = [];
     firebase.database().ref("data3").on("value", snapshot => {
       const lists = snapshot.val();
       let count = 0;
       for (let list in lists) {
-        // console.log("index: ", count);
         newStateFull.push(lists[list]);
-        if(count < 8){
-          newState.push(lists[list]);
-        }
         count = count + 1;
       }
     });
     //set currMovieList
     if(lst === 'All'){
       console.log("Choose All!!");
-      setCurrMovieList(newState);
-      if(8 < totalNum){
-        console.log("Turned to true here 2");
-        setShowLoadMore(showLoadMore => true);
-      }
+      setCurrMovieList(newStateFull);
     }
     else{
       let currMvs = [];
-      let count2 = 0;
       for (let mv in newStateFull){
         if(newStateFull[mv].List === lst){
-          if(count2 < 8){
-            currMvs.push(newStateFull[mv]);
-          }
-          count2 = count2 + 1;
+          currMvs.push(newStateFull[mv]);
         }
       }
       setCurrMovieList(currMvs);
-      console.log("Count 2: ", count2);
-      if(8 < count2){
-        console.log("Turned to true here 1");
-        setShowLoadMore(showLoadMore => true);
-      }
-      else{
-        setShowLoadMore(showLoadMore => false);
-      }
-      // console.log("currentMVS: ", currMvs);
     }
-    // console.log("current movie list: ",currMovieList)
   }
 
   function updateListIn(lst, currMovie){
@@ -253,14 +185,14 @@ function Movies(props){
   }
 
   function deleteMovie(currMovie){
-    firebase.database().ref('data3').orderByChild('imdbID').equalTo(currMovie.imdbID).once("value").then(function(snapshot) {
-      snapshot.forEach(function(child) {
-        child.ref.remove();
-      }); // a closure is needed here
-    }).then(function() {
-      console.log("Removed!");
-    });
-    // alert("Successfully deleted ", currMovie.Title);
+    // firebase.database().ref('data3').orderByChild('imdbID').equalTo(currMovie.imdbID).once("value").then(function(snapshot) {
+    //   snapshot.forEach(function(child) {
+    //     child.ref.remove();
+    //   }); // a closure is needed here
+    // }).then(function() {
+    //   console.log("Removed!");
+    // });
+    alert("You do not have access to delete a movie.");
   }
 
   function searchMovie(e){
@@ -275,15 +207,10 @@ function Movies(props){
     setCurrMovieList(new_CurrMovieList);
     if(searchName === ""){
       setCurrMovieList(movies);
-      if(showUntil < totalNum){
-        setShowLoadMore(showLoadMore => true);
-      }
     }
   }
 
   function displayMovies(){
-    // console.log("Inside display 1: ", movies);
-    // console.log("curr movie list: ", currMovieList);
     const content = currMovieList.map((movie,index) =>{
       var tempMovie = movie;
       return (<div key={tempMovie.imdbID} >
@@ -294,9 +221,8 @@ function Movies(props){
     return (
       <div className="movieGrid">
         <div className="header1">
-          {/* {chosenML} */}
           <label>
-            <select value={chosenML} onChange={e => {setShowUntil(8); updateCurrML(e.target.value);}} style={{ fontSize: "13pt"}}>
+            <select value={chosenML} onChange={e => {updateCurrML(e.target.value);}} style={{ fontSize: "13pt"}}>
               {availMLAll.map(lst => (
                 <option key={lst} value={lst}>{lst}</option>
               ))}
@@ -311,63 +237,8 @@ function Movies(props){
     );
   }
 
-  function loadMore(){
-    if((showUntil + 8) >= totalNum){
-      console.log("chao le", showUntil+8);
-      setShowLoadMore(showLoadMore => false);
-    }
-    firebase.database().ref("data3").on("value", snapshot => {
-      const lists = snapshot.val();
-      let newState = [];
-      let count = 0;
-      for (let list in lists) {
-        // console.log("index: ", count);
-        if(count < (showUntil+8)){
-          newState.push(lists[list]);
-        }
-        count = count + 1;
-      }
-      setMovies(newState);
-      if(chosenML === "All"){
-        setCurrMovieList(newState);
-      }
-      else{
-        let currMvs = [];
-        for (let mv in newState){
-          if(newState[mv].List === chosenML){
-            currMvs.push(newState[mv]);
-          }
-        }
-        setCurrMovieList(currMvs);
-        if((showUntil+8) >= currMvs.length){
-          setShowLoadMore(showLoadMore=>false);
-        }
-      }
-    });
-    setShowUntil(showUntil+8);
-    console.log("Now after loading more: ", currMovieList);
-  }
-
   function handleChange(searchName){
     setSearchName(searchName);
-  }
-
-  function displayLoadMore(){
-    console.log("Re-render display load more", showLoadMore);
-    if(showLoadMore != false){
-      return(
-        <div className="movies-bottom">
-          <button className="loadMore" onClick={()=> loadMore()}>
-            Load More
-          </button>
-        </div>
-      );
-    }
-    else{
-      return(
-        <div className="whitespace"></div>
-      );
-    }
   }
 
   return(
@@ -390,7 +261,6 @@ function Movies(props){
           <div>
             {displayMovies()}
           </div>
-          {displayLoadMore()}
         </div>
         
       </div>

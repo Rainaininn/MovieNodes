@@ -9,27 +9,23 @@
 
 .nav-bar{
   display: flex;
-  position: fixed;
-  width: 100vw;
-  background-color: white;
+  position: absolute;
+  width: 190px;
+  margin-left: 42vw;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px black solid;
+  border-radius: 8pt;
   overflow: hidden;
 }
 
 .tab{
+  width: 90px;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18pt;
-  color:cornflowerblue;
-}
-
-.tab-right{
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18pt;
-  color:cornflowerblue;
-  float:right;
-  margin-left: auto;
-  text-align: right;
+  /* color:cornflowerblue; */
+  color: #214d0f;
 }
 
 .top{

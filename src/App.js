@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css'
 import TabList from './components/TabList';
 import Body from './components/Body';
-import BackToTop from './components/BackToTop'
+// import BackToTop from './components/BackToTop'
 // import config from './config.js'
 // const firebase = require('firebase')
 
@@ -13,7 +13,7 @@ export class App extends Component{
       activeTab: 1
     }
     this.changeTab = (id) =>{
-      if(id != 8){
+      if(id != 3){
         this.setState({
         activeTab: id
       })
@@ -21,18 +21,18 @@ export class App extends Component{
       
     }
   }
-  handleOverScroll(){
-    var bttn=document.querySelector(".top");
-    if(document.body.scrollTop>100 || document.documentElement.scrollTop>100 ){
-        bttn.style.visibility="visible";
-    }
-    else{
-        bttn.style.visibility="hidden";
-    }
-  }
-  componentDidMount(){
-    document.title = "Rain Wang"
-    window.addEventListener('scroll',this.handleOverScroll)
+  // handleOverScroll(){
+  //   var bttn=document.querySelector(".top");
+  //   if(document.body.scrollTop>100 || document.documentElement.scrollTop>100 ){
+  //       bttn.style.visibility="visible";
+  //   }
+  //   else{
+  //       bttn.style.visibility="hidden";
+  //   }
+  // }
+  // componentDidMount(){
+  //   document.title = "Rain Wang"
+  //   window.addEventListener('scroll',this.handleOverScroll)
     // if (!firebase.apps.length){
     //   firebase.initializeApp(config)
     // } 
@@ -52,7 +52,7 @@ export class App extends Component{
     //     this.setState({data: data})
     // })
 
-  }
+  // }
   // componentDidUpdate(prevProps, prevState, snapshot){
   //   //only call set state here if it is wrapped in a condition
   //   //if you initialize this.state.shouldUpdate and have not changed it yet then this will not run
@@ -65,31 +65,11 @@ export class App extends Component{
     const tabs = [
       {
         id: 1,
-        title: "Home"
-      },
-      {
-        id: 2,
-        title: "Images"
-      },
-      {
-        id: 3,
-        title: "Videos"
-      },
-      {
-        id: 4,
-        title: "Projects"
-      },
-      {
-        id: 5,
         title: "Movies"
       },
       {
-        id: 6,
-        title: "Visual"
-      },
-      {
-        id: 7,
-        title: "Contact"
+        id: 2,
+        title: "Graph"
       },
     ]
     return(
@@ -98,13 +78,9 @@ export class App extends Component{
           <TabList tabs={tabs} 
           activeTab={this.state.activeTab}
           changeTab={this.changeTab}/>
-          <div className="tab-right">
-          Rain Wang
-          </div>
         </div>
         <div className="main-body">
           <Body activeTab={this.state.activeTab}></Body>
-          <BackToTop/>
         </div>
       </div>
     );
